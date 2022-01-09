@@ -15,13 +15,34 @@ const numeros = '4, 5, 20, 8, 9';
 const listaPrecos = ['R$ 59,99', ' R$ 100,222',
                      'R$ 230  ', 'r$  200'];
 
-function limpaPrecos(array){
-  let listaPrecosLimpo = Array()
+// function limpaPrecos(array){
+//   let listaPrecosLimpo = Array();
+
+//   array.forEach((item,index) => {
+//     listaPrecosLimpo[index] = parseFloat(item.toLowerCase()
+//     .replace('r$','').trim().replace(',','.')).toFixed(2);
+//   });
+
+//   let total = 0;
+//   listaPrecosLimpo.forEach((item)=>{
+//     total += parseFloat(item);
+//   })
   
-  array.forEach((item,index) => {
-    listaPrecosLimpo[index] = Number(item.toLowerCase()
-    .replace('r$','').trim().replace(',','.')).toFixed(2);
-  });
+//   return console.log(total);
+// }
+
+// console.log(limpaPrecos(listaPrecos));
+
+function limpaPreco(preco){
+  preco = +preco.toUpperCase().replace('R$', '').trim().replace(',','.');
+  preco = preco.toFixed(2)
+  return +preco
 }
 
-console.log(limpaPrecos(listaPrecos))
+let total = 0;
+
+listaPrecos.forEach((item) => {
+  total += limpaPreco(item)
+})
+
+console.log(total)
