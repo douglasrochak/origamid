@@ -20,7 +20,7 @@ const estudantes = ['Marcio', 'Brenda', 'Joana', 'Kleber', 'Julia'];
 // estudantes.sort();
 // estudantes.reverse();
 // console.log(estudantes.includes('Joana'))
-// console.log(estudantes.includes('Juliana'))
+// console.log(estudantes.includes('Juliana'))  
 
 // console.log(estudantes);
 // console.log(estudantes2);
