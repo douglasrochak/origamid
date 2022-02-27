@@ -5,19 +5,26 @@
   --orange-titles:#EE5544;
 }
 /* JS */
-.js .js-tabcontent section{
+.js [data-tab="content"] section{
   display:none;
 }
 
- .js-tabcontent section.ativo {
+ [data-tab="content"] section.ativo {
   display: block !important;
-  animation: show .5s forwards;
-  transform:translate3d(-16px,0,0);
+  /* animation: show .5s forwards; */
 }
 
-@keyframes show {
+[data-tab="content"] section.ativo.show-right {
+  animation: showRight .5s forwards;
+}
+[data-tab="content"] section.ativo.show-down {
+  animation: showDown .5s forwards;
+}
+
+@keyframes showRight {
   from {
     opacity: 0;
+    transform:translate3d(-16px,0,0);
   }
   to {
     opacity: 1;
@@ -25,21 +32,32 @@
   }
 }
 
-.js .js-accordion-list dd{
+@keyframes showDown {
+  from {
+    opacity: 0;
+    transform:translate3d(0,-16px,0);
+  }
+  to {
+    opacity: 1;
+    transform:translate3d(0,0,0);
+  }
+}
+
+.js [data-accordion="list"] dd{
   display: none;
 }
 
-.js .js-accordion-list dd.ativo{
+.js [data-accordion="list"] dd.ativo{
   display: block !important;
   animation: accordionList .5s forwards;
 }
 
-.js .js-accordion-list dt::after{
+.js [data-accordion="list"] dt::after{
   content:'⬎';
   margin-left: .2rem;
 }
 
-.js .js-accordion-list dt.ativo::after{
+.js [data-accordion="list"] dt.ativo::after{
   content:'⬏';
 }
 
@@ -54,14 +72,11 @@
   }
 }
 
-.js-scroll{
+[data-anime="scroll"]{
   opacity: 0;
-  transform: translate3d(-50px,0,0);
-  transition: .3s;
 }
-.js-scroll.ativo{
-  opacity: 1;
-  transform: translate3d(0,0,0);
+[data-anime="scroll"].ativo{
+  animation: showRight .3s forwards;
 }
 /* JS END */
 
@@ -96,9 +111,13 @@ p {
 }
 
 body {
+  background: var(--bg-white);
+
+}
+
+.body-container {
   display: grid;
   grid-template-columns: 1fr 120px minmax(300px,800px)  1fr;
-  background: var(--bg-white);
 }
 
 .menu {
