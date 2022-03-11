@@ -12,14 +12,22 @@
 
 // Substitua todas as classes js- por data atributes.
 
-import initTab from "./modules/initTab.js";
-import initAccordionList from "./modules/initAccordion.js";
-import initMenu from "./modules/initMenu.js";
-import {initAnimaScroll as animaScroll} from "./modules/initAnimaScroll.js";
-import initModal from "./modules/initModal.js";
+import initTab from "./modules/tab.js";
+import initAccordionList from "./modules/accordion.js";
+import initMenu from "./modules/menu.js";
+import {initAnimaScroll as animaScroll} from "./modules/animaScroll.js";
+import initModal from "./modules/modal.js";
+import initTooltip from "./modules/tooltip.js";
+import initDropDownMenu from "./modules/dropDownMenu.js";
+import initMenuMobile from "./modules/menuMobile.js";
+import initAnimaNumeros from "./modules/anima-numeros.js";
 
 initTab();
 initAccordionList();
 initMenu();
 animaScroll();
 initModal();
+initTooltip();
+initDropDownMenu();
+initMenuMobile();
+initAnimaNumeros();

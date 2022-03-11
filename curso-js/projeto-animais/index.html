@@ -13,8 +13,18 @@
 <body>
   <div class="body-container">
     <nav class="menu">
-      <ul>
+      <button data-menu="button" aria-expanded="false" aria-controls="menu">Menu</button>
+      <ul data-menu="list" id="menu">
         <li><a href="#animais">Animais</a></li>
+        <li data-dropdown>
+          <a href="sobre.html">Sobre</a>
+          <ul class="dropdown-menu">
+            <li><a href="empresa.html">A Empresa</a></li>
+            <li><a href="equipe.html">Equipe</a></li>
+            <li><a href="socios.html">Socios</a></li>
+            <li><a href="investidores.html">Investidores</a></li>
+          </ul>
+        </li>
         <li><a href="#faq">Faq</a></li>
         <li><a href="#contato">Contato</a></li>
         <li><a data-modal="login" target="_blank" href="https://www.origamid.com/">Dev →</a></li>
@@ -115,9 +125,31 @@
       </dl>
     </section>
 
+    <section class="grid-section numeros" data-anime="scroll">
+      <h1 class="titulo">Números</h1>
+      <div class="numeros-grid">
+        <div class="numero-animal">
+          <h3>Lobos</h3>
+          <span data-numero="">4189</span>
+        </div>
+        <div class="numero-animal">
+          <h3>Raposas</h3>
+          <span data-numero="">782</span>
+        </div>
+        <div class="numero-animal">
+          <h3>Esquilos</h3>
+          <span data-numero="">1545</span>
+        </div>
+        <div class="numero-animal">
+          <h3>Ursos</h3>
+          <span data-numero="">698</span>
+        </div>
+      </div>
+    </section>
+
     <section data-anime="scroll" class="grid-section contato" id="contato">
       <h1 class="titulo">Contato</h1>
-      <div class="mapa">
+      <div class="mapa" data-tooltip aria-label="Endereço proximo ao estacionamento">
         <img src="img/mapa.png">
       </div>
       <ul class="dados">
@@ -134,9 +166,9 @@
   </div>
   <!-- end .body-container -->
 
-  <section data-modal="show" class="modal-container">
+  <section data-modal="container" class="modal-container">
    <div class="modal">
-      <button data-modal="close" class="close">✖</button>
+      <button data-modal="close" class="close">x</button>
       <form>
           <label for="login">login</label>
           <input id="login" class="login" type="text">
