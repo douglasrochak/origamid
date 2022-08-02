@@ -9,7 +9,7 @@ export function initAnimaScroll()  {
         const halfScreen = (elementTop < window.innerHeight*0.6);
         if(halfScreen){
           element.classList.add('ativo');
-        }else
+        }else if(element.classList.contains('ativo'))
         element.classList.remove('ativo');
       });
     }
